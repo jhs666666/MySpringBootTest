@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        ConfigurableApplicationContext con = SpringApplication.run(Application.class, args);
+        Object obj = con.getBean("MyController");
+        System.out.println(obj);
     }
 
 }
